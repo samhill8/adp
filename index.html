@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draft Position Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        font-family: Poppins, sans-serif;
+        background-color: #0d0c18;
+      }
+      body {
+        margin: 250px 50px 50px 50px;
+        display: flex;
+        place-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      h1 {
+        color: aquamarine;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        color: rgba(245, 245, 245, 0.736);
+        font-weight: 400;
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      label,
+      input,
+      button {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      label,
+      #result {
+        font-size: 1.5rem;
+        color: rgba(245, 245, 245, 0.653);
+      }
+
+      button {
+        margin-top: 1rem;
+        padding: 8px 10px;
+        background-color: aquamarine;
+        color: #0d0c18;
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      button:hover {
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      input {
+        padding: 7px;
+        background-color: whitesmoke;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CHS Dynasty 2<br />Draft Position Calculator</h1>
+      <h3>(Based on 12 picks per round)</h3>
+      <form id="draftForm">
+        <label for="adp">Enter ADP:</label>
+        <input type="number" id="adp" name="adp" required />
+        <button type="button" onclick="calculateDraftPosition()">
+          Calculate
+        </button>
+      </form>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculateDraftPosition() {
+        const adp = parseInt(document.getElementById("adp").value);
+        const leagueSize = 12;
+
+        if (isNaN(adp) || adp <= 0) {
+          document.getElementById("result").textContent =
+            "Please enter a valid ADP.";
+          return;
+        }
+
+        const round = Math.ceil(adp / leagueSize);
+        const pickInRound = adp - leagueSize * (round - 1);
+
+        document.getElementById(
+          "result"
+        ).textContent = `ADP ${adp} is in round ${round}, pick ${pickInRound} (${round}.${
+          pickInRound < 10 ? `0${pickInRound}` : pickInRound
+        }).`;
+      }
+    </script>
+  </body>
+</html>
