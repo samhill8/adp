@@ -7,6 +7,17 @@ if (navigator.userAgent.indexOf("iPhone") > -1) {
     );
 }
 
+$(document).ready(function () {
+  document.ontouchmove = function (e) {
+    e.preventDefault();
+  };
+});
+
+input.onfocus = function () {
+  window.scrollTo(0, 0);
+  document.body.scrollTop = 0;
+};
+
 let leagueSize = 12;
 document.getElementById("active-text").textContent = leagueSize;
 
