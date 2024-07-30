@@ -13,25 +13,22 @@
     <style>
       html {
         font-family: Poppins, sans-serif;
-        /* background-color: #0d0c18; */
         background-color: rgba(3, 7, 18, 0.907);
-        overflow: hidden;
         --text-color: rgba(245, 245, 245, 0.736);
       }
       body {
         height: 100vh;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 90vh 10vh;
+        margin: 0;
       }
       .container {
-        height: 90vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin-top: -4rem;
-        padding-bottom: 4rem;
+        margin-top: -7rem;
       }
       h1 {
         color: aquamarine;
@@ -62,7 +59,7 @@
         margin-top: 1rem;
         padding: 8px 10px;
         background-color: aquamarine;
-        color: #0d0c18;
+        color: rgba(3, 7, 18, 0.907);
         font-family: Poppins, sans-serif;
         font-weight: 600;
         font-size: 15px;
@@ -89,8 +86,6 @@
 
       footer {
         display: flex;
-        /* flex-grow: 1; */
-        height: 10vh;
         align-items: center;
         justify-content: center;
         color: var(--text-color);
