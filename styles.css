@@ -11,7 +11,6 @@ body {
     height: calc(100vh - 30px);
     margin: 0;
     padding: 15px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
