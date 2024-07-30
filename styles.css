@@ -4,9 +4,7 @@ html {
     --text-color: rgba(245, 245, 245, 0.736);
 }
 body {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 90vh 10vh;
+    height: calc(100vh - 30px);
     margin: 0;
     padding: 15px;
 }
@@ -16,6 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 90%;
 }
 h1 {
     color: #7fffd4;
@@ -138,6 +137,7 @@ form button {
 }
 
 footer {
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +154,7 @@ h4 {
 input,
 select,
 option {
-    font-family: Poppins, sans-serif;
+    font-family: Poppins, sans-serif !important;
 }
 
 @media (max-width: 430px) {
